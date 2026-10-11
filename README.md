@@ -13,6 +13,33 @@ Source: [Codecademy](./Codecademy)
 
 Includes a simple multilayer perceptron script and notebook.
 
+### Python setup on Windows
+
+Keep the Python install manager's `%LOCALAPPDATA%\Python\bin` and
+`%LOCALAPPDATA%\Microsoft\WindowsApps` directories on your user PATH.
+Graph rendering also requires the Graphviz application (not just its Python
+package); its `bin` directory must be on PATH. Restart VS Code after PATH changes.
+Avoid copying the machine PATH into the user PATH or using `setx PATH`, which
+can truncate long values.
+
+For new projects, use a project-local virtual environment rather than adding
+packages to the shared Python installation:
+
+```powershell
+py -3.14 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install torch torchviz torchview ipykernel
+.\.venv\Scripts\python.exe -m pip check
+```
+
+Select that environment as both the VS Code Python interpreter and notebook
+kernel. Use `python -m pip install <package>` with the selected interpreter
+instead of a bare `pip` command; inside a notebook, `%pip install <package>`
+targets its kernel environment. Restart the kernel after package changes.
+
+The architecture diagram in [custom_torchinfo.py](./Codecademy/custom_torchinfo.py)
+uses Arial to avoid torchview's missing Linux Libertine font warning on Windows.
+
 Microsoft Learning — AI Chat with RAG
 Source: AI/my-intelligent-app
 
