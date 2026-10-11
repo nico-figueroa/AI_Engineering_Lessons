@@ -77,7 +77,9 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({ src }) => {
                             aria-label={t("tooltips.save")}
                         />
                     </a>
-                    <ReactMarkdown children={content} remarkPlugins={[remarkGfm]} className={`${styles.markdown} ${styles.markdownViewer}`} />
+                    <div className={`${styles.markdown} ${styles.markdownViewer}`}>
+                        <ReactMarkdown children={content} remarkPlugins={[remarkGfm]} />
+                    </div>
                 </div>
             )}
         </div>
