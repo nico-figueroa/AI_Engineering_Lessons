@@ -8,6 +8,11 @@ All licenses and source materials are respected and referenced when appropriate.
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
 
 ## 📂 Main Projects
+Codecademy — Machine Learning Lessons
+Source: [Codecademy](./Codecademy)
+
+Includes a simple multilayer perceptron script and notebook.
+
 Microsoft Learning — AI Chat with RAG
 Source: AI/my-intelligent-app
 
@@ -31,6 +36,20 @@ Learning artifact exploring dashboarding concepts with AI assistance.
 * ![Azure](https://img.shields.io/badge/Azure-0078D4?logo=microsoftazure&logoColor=white)
 * ![RAG](https://img.shields.io/badge/RAG-Pipeline-blue)
 * ![AI](https://img.shields.io/badge/AI-Learning-green)
+
+## Git and Local Dependencies
+
+Installed dependencies such as `node_modules/` stay local and are excluded by
+`.gitignore`. Commit the frontend's `package.json` and `package-lock.json`
+instead; restore its dependencies with `npm ci` from
+`my-intelligent-app/azure-search-openai-demo/app/frontend`.
+
+An ignore rule does not stop tracking files already committed. If dependencies
+are accidentally tracked again, use `git rm -r --cached -- <dependency-folder>`
+and commit the removal. `--cached` keeps the installed files on your computer.
+
+Before committing, review `git status` and stage only the intended files. After
+committing, use `git push origin main` to publish the changes to GitHub.
 
 ## 📨 Contact
 Name: Nicolas Figueroa
