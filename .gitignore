@@ -1,0 +1,60 @@
+# 🔒 Secrets and environment files
+*.env
+*.env.*
+.env.local
+.env.development
+.env.production
+.env.test
+
+# 🔒 Certificates and keys
+*.pem
+*.key
+*.crt
+*.cer
+*.pfx
+*.p12
+**/cert/
+**/secrets/
+**/keys/
+
+# 🔒 Token / credential files
+*.token
+*.secret
+*.credentials
+*.auth
+*.jwt
+
+# 🔒 Block any file containing "key" or "secret"
+*key*
+*secret*
+
+# Node / React
+node_modules/
+dist/
+build/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.log
+*.egg-info/
+.env/
+venv/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor junk
+.vscode/
+.idea/
+*.swp
+*.swo
