@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from custom_torchinfo import custom_summary
+from Codecademy.Simple_MLP.custom_torchinfo import custom_summary
 
 torch.manual_seed(0)
 

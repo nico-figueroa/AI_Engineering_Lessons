@@ -1,19 +1,42 @@
-# AI Lessons
+# AI Engineering Lessons
 A collection of explorations, experiments, and learning projects focused on artificial intelligence, machine learning, and modern AI tooling. This repository reflects my progression in understanding, building, refactoring, and deploying AI‑powered applications — sometimes independently, sometimes assisted by AI systems like Copilot.
 
 ## 📘 About This Repository
-The lessons and learnings demonstrate my ability to work with AI frameworks, RAG pipelines, vector stores, and cloud‑hosted AI applications. Some projects follow structured learning paths (Microsoft Learn, tutorials, guided labs).
+The lessons and learnings demonstrate my ability to work with AI frameworks, RAG pipelines, vector stores, and cloud‑hosted AI applications. Some projects follow structured learning paths (Codecademy, Microsoft Learn, tutorials, guided labs).
 
 All licenses and source materials are respected and referenced when appropriate. Contents may be reused under an open license.
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
 
 ## 📂 Main Projects
-Codecademy — Machine Learning Lessons
-Source: [Codecademy](./Codecademy)
 
-Includes a simple multilayer perceptron script and notebook.
+Microsoft Learning — AI Chat with RAG
+Source: AI/my-intelligent-app
 
-### Python setup on Windows
+Live deployment:
+https://capps-backend-2zusqcpu4spb6.jollyhill-b19bfefa.eastus.azurecontainerapps.io/ (capps-backend-2zusqcpu4spb6.jollyhill-b19bfefa.eastus.azurecontainerapps.io in Bing)
+
+MCP‑Enabled Web Dashboard
+Learning artifact exploring dashboarding concepts with AI assistance.
+
+## 📚 Learning Sources
+
+* Microsoft Learn
+* AI‑generated content (primarily Copilot)
+* Online documentation and tutorials
+* Codecademy — AI Engineer Lessons
+* Codecademy — Pytorch Lessons
+* Codecademy — Machine Learning Lessons
+* Personal experimentation
+
+## 🛠️ Technologies Practiced
+
+* ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+* ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+* ![Azure](https://img.shields.io/badge/Azure-0078D4?logo=microsoftazure&logoColor=white)
+* ![RAG](https://img.shields.io/badge/RAG-Pipeline-blue)
+* ![AI](https://img.shields.io/badge/AI-Learning-green)
+
+## Python setup on Windows
 
 Keep the Python install manager's `%LOCALAPPDATA%\Python\bin` and
 `%LOCALAPPDATA%\Microsoft\WindowsApps` directories on your user PATH.
@@ -40,30 +63,6 @@ targets its kernel environment. Restart the kernel after package changes.
 The architecture diagram in [custom_torchinfo.py](./Codecademy/custom_torchinfo.py)
 uses Arial to avoid torchview's missing Linux Libertine font warning on Windows.
 
-Microsoft Learning — AI Chat with RAG
-Source: AI/my-intelligent-app
-
-Live deployment:
-https://capps-backend-2zusqcpu4spb6.jollyhill-b19bfefa.eastus.azurecontainerapps.io/ (capps-backend-2zusqcpu4spb6.jollyhill-b19bfefa.eastus.azurecontainerapps.io in Bing)
-
-MCP‑Enabled Web Dashboard
-Learning artifact exploring dashboarding concepts with AI assistance.
-
-## 📚 Learning Sources
-
-* Microsoft Learn
-* AI‑generated content (primarily Copilot)
-* Online documentation and tutorials
-* Personal experimentation
-
-## 🛠️ Technologies Practiced
-
-* ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-* ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
-* ![Azure](https://img.shields.io/badge/Azure-0078D4?logo=microsoftazure&logoColor=white)
-* ![RAG](https://img.shields.io/badge/RAG-Pipeline-blue)
-* ![AI](https://img.shields.io/badge/AI-Learning-green)
-
 ## Git and Local Dependencies
 
 Installed dependencies such as `node_modules/` stay local and are excluded by
@@ -80,4 +79,4 @@ committing, use `git push origin main` to publish the changes to GitHub.
 
 ## 📨 Contact
 Name: Nicolas Figueroa
-Email: nitem18@hotmail.com
+Email: nico.figueroa.hidalgo@outlook.com
