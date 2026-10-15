@@ -9,11 +9,19 @@ All licenses and source materials are respected and referenced when appropriate.
 
 ## 📂 Main Projects
 
-Microsoft Learning — AI Chat with RAG
-Source: AI/my-intelligent-app
+### Microsoft Learn — Azure RAG Deployment Archive
 
-Live deployment:
-https://capps-backend-2zusqcpu4spb6.jollyhill-b19bfefa.eastus.azurecontainerapps.io/ (capps-backend-2zusqcpu4spb6.jollyhill-b19bfefa.eastus.azurecontainerapps.io in Bing)
+[Project summary, architecture, deployment inventory, and recorded changes](./my-intelligent-app/README.md)
+from my exercise deploying the Microsoft Azure Search + OpenAI sample to Azure
+Container Apps. This is a curated historical portfolio archive, not a runnable
+copy of the upstream application.
+
+As of October 15, 2026, I report that the
+[deployed application endpoint](https://capps-backend-2zusqcpu4spb6.jollyhill-b19bfefa.eastus.azurecontainerapps.io/)
+remains available, but the model service has been retired to reduce costs.
+UI availability does not establish that AI answers still work. The archive
+distinguishes my recorded changes and reported deployment from upstream sample
+material and preserves a Git recovery reference.
 
 MCP‑Enabled Web Dashboard
 Learning artifact exploring dashboarding concepts with AI assistance.
@@ -65,10 +73,12 @@ uses Arial to avoid torchview's missing Linux Libertine font warning on Windows.
 
 ## Git and Local Dependencies
 
-Installed dependencies such as `node_modules/` stay local and are excluded by
-`.gitignore`. Commit the frontend's `package.json` and `package-lock.json`
-instead; restore its dependencies with `npm ci` from
-`my-intelligent-app/azure-search-openai-demo/app/frontend`.
+For active projects, installed dependencies such as `node_modules/` stay local
+and are excluded by `.gitignore`. Commit dependency manifests and lockfiles
+instead, and restore dependencies with the project's package manager.
+The [Azure project](./my-intelligent-app/README.md) is now a historical archive;
+its installed dependencies and runnable sample copy have been removed.
+Its README explains how to recover the original tracked source if needed.
 
 An ignore rule does not stop tracking files already committed. If dependencies
 are accidentally tracked again, use `git rm -r --cached -- <dependency-folder>`

@@ -1,0 +1,14 @@
+# This folder is a curated historical archive, not an application checkout.
+# Explicitly add any future portfolio evidence to this allowlist.
+*
+!/.gitignore
+!/README.md
+!/azure.yaml
+!/personal-changes.patch
+!/azure-search-openai-demo/
+!/azure-search-openai-demo/LICENSE
+!/azure-search-openai-demo/azure.yaml
+!/azure-search-openai-demo/docs/
+!/azure-search-openai-demo/docs/images/
+!/azure-search-openai-demo/docs/images/appcomponents.png
+!/azure-search-openai-demo/docs/images/diagram_prepdocs.png
