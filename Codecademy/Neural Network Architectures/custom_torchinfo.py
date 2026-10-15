@@ -24,6 +24,9 @@ def custom_summary(
     """
     A Codecademy-style model summary with optional graphical visualizations.
 
+    Matches the model's device and dtype, temporarily evaluates it, and removes
+    summary hooks even if the forward pass fails.
+
     Parameters:
         model (nn.Module): The PyTorch model to summarize.
         input_size (tuple): Shape of the input tensor.
@@ -43,7 +46,10 @@ def custom_summary(
         batch_size = input_size[0]
         real_input_size = input_size[1:]
 
-    x = torch.randn(batch_size, *real_input_size)
+    parameter = next(model.parameters())
+    x = torch.randn(
+        batch_size, *real_input_size, device=parameter.device, dtype=parameter.dtype
+    )
 
     # ------------------------------------------------------------
     # Start timing
@@ -60,16 +66,29 @@ def custom_summary(
         out_shape = list(out.shape)
         summary.append((class_name, out_shape, params))
 
-    for m in model.modules():
-        if not isinstance(m, (nn.Sequential, nn.ModuleList)):
-            m.register_forward_hook(hook)
-
     # ------------------------------------------------------------
     # Forward pass timing
     # ------------------------------------------------------------
-    forward_start = time.time()
-    y = model(x)
-    forward_end = time.time()
+    handles = []
+    training_states = [(module, module.training) for module in model.modules()]
+    try:
+        for m in model.modules():
+            if not isinstance(m, (nn.Sequential, nn.ModuleList)):
+                handles.append(m.register_forward_hook(hook))
+        model.eval()
+        if x.is_cuda:
+            torch.cuda.synchronize(x.device)
+        forward_start = time.time()
+        with torch.set_grad_enabled(show_graph):
+            y = model(x)
+        if x.is_cuda:
+            torch.cuda.synchronize(x.device)
+        forward_end = time.time()
+    finally:
+        for handle in handles:
+            handle.remove()
+        for module, training in training_states:
+            module.training = training
     forward_time = forward_end - forward_start
 
     # ------------------------------------------------------------
