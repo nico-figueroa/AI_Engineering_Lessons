@@ -73,6 +73,10 @@ uses Arial to avoid torchview's missing Linux Libertine font warning on Windows.
 
 ## Git and Local Dependencies
 
+Local Postman AI instruction templates matching
+`.github/instructions/postman-*.instructions.md` are ignored and stay on your
+computer. Other files under `.github/` remain eligible for version control.
+
 For active projects, installed dependencies such as `node_modules/` stay local
 and are excluded by `.gitignore`. Commit dependency manifests and lockfiles
 instead, and restore dependencies with the project's package manager.
