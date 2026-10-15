@@ -1,2 +1,0 @@
-import{r as e}from"./rolldown-runtime-QTnfLwEv.js";import{j as t}from"./fluentui-react-DGcnD0e-.js";var n=e(t(),1);function r(){return(0,n.jsx)(`h1`,{children:`404`})}r.displayName=`NoPage`;export{r as Component};
-//# sourceMappingURL=NoPage-Chq4j-5x.js.map
