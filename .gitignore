@@ -59,3 +59,11 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Input data files
+*.tar.gz
+*.pt
+*.pth
+*.zip
+*.csv
+*.tsv
