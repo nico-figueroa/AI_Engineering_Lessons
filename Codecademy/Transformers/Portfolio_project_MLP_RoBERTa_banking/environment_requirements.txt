@@ -1,0 +1,22 @@
+# Tested direct dependencies for banking_classification_BERT.ipynb on Python 3.14.6.
+# Install the CUDA 12.6 PyTorch build separately; see README.md.
+numpy==2.5.4
+pandas==3.0.6
+scipy==1.18.1
+scikit-learn==1.9.1
+joblib==1.6.0
+matplotlib==3.11.2
+seaborn==0.13.2
+torch==2.14.1+cu126
+transformers==5.20.2
+peft==0.21.2
+accelerate==1.15.0
+datasets==5.1.0
+huggingface-hub==2.2.0
+safetensors==0.8.0
+ipython==9.16.1
+ipykernel==7.4.0
+nbformat==5.11.1
+nbclient==0.11.0
+# Protected-text word cloud; PII detection reuses Transformers/PyTorch above.
+wordcloud==1.9.6

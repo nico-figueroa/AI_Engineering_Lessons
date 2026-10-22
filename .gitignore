@@ -59,6 +59,8 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+logs/
+logs/*.log
 
 # Local Postman AI instruction templates
 /.github/instructions/postman-*.instructions.md
