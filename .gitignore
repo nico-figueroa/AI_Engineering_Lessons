@@ -61,6 +61,7 @@ Thumbs.db
 *.swo
 logs/
 logs/*.log
+.streamlit/
 
 # Local Postman AI instruction templates
 /.github/instructions/postman-*.instructions.md
@@ -73,3 +74,20 @@ logs/*.log
 *.csv
 *.tsv
 *ubyte*
+
+# Agent-related files
+*.agents
+*.model
+*.checkpoint
+*.weights
+*.h5
+*.ckpt
+*.claude
+*.agentcache
+EXECUTION*.md
+AGENT*
+
+# Git
+.git/
+.gitignore
+*.github
