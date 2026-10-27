@@ -74,6 +74,7 @@ logs/*.log
 *.csv
 *.tsv
 *ubyte*
+*.bin
 
 # Agent-related files
 *.agents
