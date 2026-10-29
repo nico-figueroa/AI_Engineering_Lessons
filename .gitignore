@@ -86,7 +86,7 @@ logs/*.log
 *.claude
 *.agentcache
 EXECUTION*.md
-AGENT*
+AGENT*.md
 
 # Git
 .git/
