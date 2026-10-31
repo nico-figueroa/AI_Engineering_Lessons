@@ -5,7 +5,7 @@ def lookup_contact(contact_name):
     """Looks up team member or contact information from the team directory."""
     try:
         # Create file path for team directory
-        file_path = os.path.join(os.path.dirname(__file__), "..", "content", "team_directory.json")
+        file_path = os.path.join(os.path.dirname(__file__), "..", "content", "team_directory.json") # Task 7 (from here to line 37)
         
         if not os.path.exists(file_path):
             return {"status": "error", "message": "Team directory not found"}
@@ -43,7 +43,15 @@ lookup_contact_tool_definition = {
     "type": "function",
     "function": {
         "name": "lookup_contact",
-        "description": "Looks up information about team members and key contacts from the team directory. Use this to get contact details and role information.",
+        "description": """Looks up information about team members, department contacts, 
+        and organizational roles from the company directory. Use this tool whenever a 
+        section being created, revised, or reviewed depends on knowledge of a specific 
+        person, team, title, department, or role. Pass the referenced person's name or 
+        role as the argument. If the user mentions a company employee, contact, team, 
+        or position that is unknown, ambiguous, or not explicitly provided in the current 
+        context, use this tool to retrieve accurate information before proceeding. Do not 
+        guess contact details, responsibilities, reporting relationships, or role information 
+        when this tool can provide authoritative data.""", # Task 10
         "parameters": {
             "type": "object",
             "properties": {

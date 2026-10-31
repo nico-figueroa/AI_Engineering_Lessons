@@ -10,7 +10,7 @@ def delete_section(section_number):
             return {"status": "error", "message": f"Training section {section_number} not found"}
         
         # Delete the file
-        os.remove(file_path)
+        os.remove(file_path) # Task 6
             
         return {
             "status": "success", 
@@ -25,7 +25,14 @@ delete_section_tool_definition = {
     "type": "function",
     "function": {
         "name": "delete_section",
-        "description": "Deletes a training manual section file. Use this to remove sections that are no longer needed.",
+        "description": """Deletes a training manual section file. This is a destructive 
+        action and should only be performed when the user explicitly and clearly requests 
+        that a section be deleted, removed, discarded, or permanently eliminated. Never 
+        infer deletion intent from comments that a section is outdated, incorrect, redundant, 
+        unnecessary, or should be changed. If it appears that deletion may be appropriate but 
+        the user has not directly instructed you to delete the section, ask for clarification 
+        instead of calling the tool. Only invoke this tool when there is clear, unambiguous 
+        user authorization to permanently remove the specified section.""", # Task 9
         "parameters": {
             "type": "object",
             "properties": {

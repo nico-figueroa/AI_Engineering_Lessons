@@ -12,7 +12,7 @@ def read_section(section_number):
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
             
-        return {
+        return { # Task 5
             "status": "success", 
             "section_number": section_number,
             "content": content,
@@ -26,7 +26,14 @@ read_section_tool_definition = {
     "type": "function",
     "function": {
         "name": "read_section",
-        "description": "Reads the content of an existing training manual section. Use this to view training documentation that has been written.",
+        "description": """Reads the content of an existing training manual section. 
+        Use this tool whenever you need to know what a section currently contains 
+        before answering a question, making revisions, expanding content, summarizing 
+        information, or determining whether changes are needed. Also use it when the 
+        user asks to read, review, summarize, explain, or retrieve the contents of a 
+        handbook section. When information about a section is required and its contents 
+        are not already known, read the section rather than making assumptions about 
+        what it contains.""", # Task 11
         "parameters": {
             "type": "object",
             "properties": {

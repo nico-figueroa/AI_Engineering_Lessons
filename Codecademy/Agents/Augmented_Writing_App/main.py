@@ -25,16 +25,16 @@ for i, message in enumerate(st.session_state.messages):
         if i in st.session_state.tool_calls:
             tool_call_info = st.session_state.tool_calls[i]
             st.info(f"""
-🔧 **Tool Executed:** `{tool_call_info['function_name']}`
+🔧 **Tool Executed:** `{tool_call_info['function_name']}` # Task 1
 
 **Input:**
 ```json
-{json.dumps(tool_call_info['function_args'], indent=2)}
+{json.dumps(tool_call_info['function_args'], indent=2)} # Task 2
 ```
 
 **Output:**
 ```json
-{json.dumps(tool_call_info['result'], indent=2)}
+{json.dumps(tool_call_info['result'], indent=2)} # Task 3
 ```
 """)
 
@@ -98,5 +98,6 @@ if prompt := st.chat_input("Help me create training documentation..."):
         except Exception as e:
             st.error(f"Error: {str(e)}")
             # Try to provide more details about the error
-            if hasattr(e, 'response'):
-                st.write("Response details:", e.response) 
+            response = getattr(e, 'response', None)
+            if response is not None:
+                st.write("Response details:", response)
