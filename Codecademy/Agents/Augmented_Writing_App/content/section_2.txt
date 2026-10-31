@@ -1,0 +1,25 @@
+Section 2: IT Setup and Security
+
+Your technology setup is crucial for productivity and security. Please follow these steps carefully and contact IT Support if you encounter any issues.
+
+**Computer Setup:**
+1. Log in using your temporary credentials (provided by IT)
+2. Update your password immediately (must be 12+ characters with mixed case, numbers, and symbols)
+3. Install required software from the company portal
+4. Configure your email and calendar settings
+
+**Security Guidelines:**
+- Never share your login credentials with anyone
+- Lock your computer whenever you step away (Windows: Win+L, Mac: Cmd+Ctrl+Q)
+- Report suspicious emails to IT immediately - when in doubt, don't click!
+- Use the company VPN when working remotely
+- Keep your software updated with automatic updates enabled
+
+**Common Applications:**
+- Email: Microsoft Outlook (training available)
+- Messaging: Microsoft Teams for chat and video calls
+- File Storage: SharePoint for shared documents
+- Time Tracking: CompanyTime system for project hours
+
+**Getting Help:**
+For technical issues, submit a ticket at support@company.com or call ext. 4357 (HELP). Include detailed descriptions of the problem and any error messages you see. 
