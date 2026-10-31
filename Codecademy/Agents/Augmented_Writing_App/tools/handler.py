@@ -9,25 +9,25 @@ To add a new tool:
 5. Add the tool_definition to TOOLS list
 """
 import json
-from .write_section import write_section, write_section_tool_definition
+from .write_section import write_section, write_section_tool_definition # Task 12
 from .read_section import read_section, read_section_tool_definition
 from .delete_section import delete_section, delete_section_tool_definition
-from .lookup_contact import lookup_contact, lookup_contact_tool_definition
+from .lookup_contact import lookup_contact, lookup_contact_tool_definition # Task 13
 
 # Function registry - add new functions here
 FUNCTION_REGISTRY = {
-    "write_section": write_section,
+    "write_section": write_section, # Task 12
     "read_section": read_section,
     "delete_section": delete_section,
-    "lookup_contact": lookup_contact
+    "lookup_contact": lookup_contact # Task 13
 }
 
 # Tool definitions - add new tool definitions here
 TOOLS = [
-    write_section_tool_definition,
+    write_section_tool_definition, # Task 12
     read_section_tool_definition,
     delete_section_tool_definition,
-    lookup_contact_tool_definition
+    lookup_contact_tool_definition # Task 13
 ]
 
 
@@ -76,7 +76,7 @@ def get_completion_with_tools(client, messages):
     response = client.chat.completions.create(
         model="gpt-4.1",
         messages=messages,
-        tools=TOOLS
+        tools=TOOLS # Task 14
     )
     
     # Step 2: Check for function calls
