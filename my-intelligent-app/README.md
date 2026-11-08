@@ -87,8 +87,8 @@ The repository records the project import and subsequent local changes:
 | --- | --- |
 | `79375315a0bc99aac96244925cb4e4e32d185010` | Initial project import |
 | `8c9f19c` | Removed `user-select: none` from the settings CSS, recorded as a compatibility fix |
-| `3b42e54` | Moved MarkdownViewer styling onto a wrapping element rather than passing `className` to ReactMarkdown |
-| `3b42e54`, `9651919`, `505dc9a` | Frontend dependency manifest and lockfile updates |
+| `252d527` | Moved MarkdownViewer styling onto a wrapping element rather than passing `className` to ReactMarkdown |
+| `252d527`, `6a2ab94`, `e3d1ea8` | Frontend dependency manifest and lockfile updates |
 
 The concise [personal changes patch](personal-changes.patch) preserves the
 net source edits and dependency manifest changes relative to the initial
@@ -132,33 +132,39 @@ Removed locally and from the current Git index:
   automation, and editor scaffolding.
 - The generated next-steps guide and duplicate development-container setup.
 
-The full application can be recovered from this repository's history. This
-cleanup intentionally does **not** rewrite history: older blobs, including
-previously committed dependencies, still occupy Git storage. The repository's
+The full application can be recovered from this repository's history. The
+original archive cleanup did **not** rewrite history: older blobs, including
+previously committed dependencies, remained in Git storage. The repository's
 Git object store was about 127.9 MiB before cleanup, shared across all projects;
 that is separate from the local project files measured above.
 
-Earlier public commits retain deployment identifiers and endpoint links that
-are no longer included in the current documentation. Local history inspection
-confirmed these older disclosures. No history rewrite or remote cleanup has
-been performed. Removing them from this revision does not remove copies in
-GitHub history, forks, clones, or caches. A coordinated history rewrite and
-remote cleanup require separate approval, and cannot guarantee recall of
-previously public information. Resource identifiers are not credentials; rotate
-or revoke any actual secrets if a separate audit finds they were published.
+On November 7, 2026, an approved security cleanup rewrote reachable history to
+redact the reviewed deployment identifiers and endpoint links, including those
+in historical evaluation JSON. Local validation scanned every reachable Git
+object and found no remaining occurrences of the reviewed identifiers.
+The commit references below and above identify the sanitized history.
+
+This does not guarantee removal of old GitHub commit URLs, cached views, forks,
+or existing clones. Existing contributors should clone the rewritten repository
+fresh rather than merge or push old history back into it. A local recovery
+bundle containing the original disclosures is retained outside the repository;
+do not upload it. GitHub-side cache or unreachable-object cleanup, if needed,
+must be coordinated separately with GitHub Support. Resource identifiers are
+not credentials; rotate or revoke any actual secrets if a separate audit finds
+they were published.
 
 ## Recovering the historical source
 
 The full pre-archive repository state is commit:
 
 ```text
-b2ffe4bdbbe183996354510d00d88de9eda183f6
+a9bc2e39bea426bdd325566a26fe281830d72109
 ```
 
 From the repository root, create a separate checkout without undoing the archive:
 
 ```powershell
-git worktree add --detach ..\AI_Engineering_Lessons-before-azure-archive b2ffe4bdbbe183996354510d00d88de9eda183f6
+git worktree add --detach ..\AI_Engineering_Lessons-before-azure-archive a9bc2e39bea426bdd325566a26fe281830d72109
 ```
 
 This checks out the whole historical repository, so allow disk space for other
@@ -166,7 +172,7 @@ projects too. Installed dependencies excluded from Git are not recovered.
 For the application alone, export its tracked files to a separate ZIP:
 
 ```powershell
-git archive --format=zip --output=..\azure-project-before-archive.zip b2ffe4bdbbe183996354510d00d88de9eda183f6 my-intelligent-app
+git archive --format=zip --output=..\azure-project-before-archive.zip a9bc2e39bea426bdd325566a26fe281830d72109 my-intelligent-app
 ```
 
 Historical dependencies may be outdated; recovery is not a guarantee of a

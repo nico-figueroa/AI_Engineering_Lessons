@@ -93,8 +93,11 @@ logs. Configure dependency logging and hosting error pages separately before
 deployment; never enable verbose provider logging on a public service.
 
 Deployment hostnames and resource names are omitted from current documentation.
-Earlier public commits can still contain them. Changing files or adding ignore
-rules does not erase Git history, forks, clones, or caches. If a real credential
+The reviewed identifiers were also redacted from reachable history in an
+approved rewrite; see the [archive notes](./my-intelligent-app/README.md).
+Existing contributors should clone the repository fresh and avoid reintroducing
+old history. Old public copies, GitHub commit URLs, forks, clones, or caches may
+still retain the original information. If a real credential
 was published, revoke or rotate it first; history cleanup is not a substitute.
 Publishing code changes also does not update an already running application.
 
