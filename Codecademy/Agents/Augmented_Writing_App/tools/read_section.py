@@ -1,4 +1,7 @@
 import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 def read_section(section_number):
     """Reads a training manual section file from the content folder."""
@@ -19,8 +22,9 @@ def read_section(section_number):
             "length": len(content)
         }
         
-    except Exception as e:
-        return {"status": "error", "message": f"Failed to read section: {str(e)}"}
+    except Exception:
+        logger.error("Section read failed; exception details omitted.")
+        return {"status": "error", "message": "Failed to read section. Please try again later."}
 
 read_section_tool_definition = {
     "type": "function",

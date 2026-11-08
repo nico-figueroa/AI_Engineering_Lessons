@@ -24,8 +24,8 @@ operational. The model service was retired to reduce billing costs. A reachable
 web interface should therefore **not** be interpreted as confirmation that
 end-to-end AI answer generation still works.
 
-Historical deployment endpoint:
-<redacted-deployment.invalid/>
+Deployment hostnames and exact resource identifiers are intentionally omitted
+from this public archive. Keep operational inventory in a private location.
 
 This archive cleanup did not contact the application, run inference, inspect
 the Azure account, or change cloud resources. Resource existence and live
@@ -33,19 +33,18 @@ availability below are the owner's report, not independently verified results.
 
 ### Retained Azure resources reported by the owner
 
-| Resource | Service | Region |
-| --- | --- | --- |
-| `redacted-resource` | Container App | East US |
-| `redacted-resource` | Container Apps Environment | East US |
-| `redacted-resource` | Container registry | East US |
-| `redacted-resource` | Document Intelligence | East US |
-| `redacted-resource` | Storage account | East US |
-| `redacted-resource` | Managed Identity | East US |
-| `redacted-resource` | Managed Identity | East US |
-| `redacted-resource` | Application Insights | East US |
-| `redacted-resource` | Log Analytics workspace | East US |
-| `redacted-resource` | Shared dashboard | East US |
-| `Application Insights Smart Detection` | Action group | Global |
+| Service |
+| --- |
+| Container App |
+| Container Apps Environment |
+| Container registry |
+| Document Intelligence |
+| Storage account |
+| Managed identities |
+| Application Insights |
+| Log Analytics workspace |
+| Shared dashboard |
+| Action group |
 
 Azure AI Search and Azure OpenAI are part of the sample's RAG design, but are
 not listed as retained resources in the owner's current inventory. Do not infer
@@ -116,7 +115,7 @@ Before cleanup the project occupied **466,330,217 bytes (444.7 MiB)** across
 
 | Kept | Reason |
 | --- | --- |
-| This project summary and owner-reported resource inventory | Gives an employer context, scope, limitations, and attributable work |
+| This project summary and owner-reported service overview | Gives an employer context, scope, limitations, and attributable work without deployment identifiers |
 | Two original deployment manifests | Records deployment intent without retaining the full template |
 | Concise personal changes patch | Shows repository-recorded modifications |
 | Two upstream reference diagrams | Explains the RAG and ingestion design, explicitly attributed |
@@ -138,6 +137,15 @@ cleanup intentionally does **not** rewrite history: older blobs, including
 previously committed dependencies, still occupy Git storage. The repository's
 Git object store was about 127.9 MiB before cleanup, shared across all projects;
 that is separate from the local project files measured above.
+
+Earlier public commits retain deployment identifiers and endpoint links that
+are no longer included in the current documentation. Local history inspection
+confirmed these older disclosures. No history rewrite or remote cleanup has
+been performed. Removing them from this revision does not remove copies in
+GitHub history, forks, clones, or caches. A coordinated history rewrite and
+remote cleanup require separate approval, and cannot guarantee recall of
+previously public information. Resource identifiers are not credentials; rotate
+or revoke any actual secrets if a separate audit finds they were published.
 
 ## Recovering the historical source
 

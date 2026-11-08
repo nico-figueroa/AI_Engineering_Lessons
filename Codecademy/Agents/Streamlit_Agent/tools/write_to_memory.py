@@ -1,6 +1,9 @@
 import json
 from datetime import datetime
 import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 def write_to_memory(memory):
     """Stores a memory string with timestamp in memories.json file."""
@@ -34,8 +37,9 @@ def write_to_memory(memory):
             
         return {"status": "success", "message": "Memory stored successfully"}
         
-    except Exception as e:
-        return {"status": "error", "message": f"Failed to store memory: {str(e)}"}
+    except Exception:
+        logger.error("Memory write failed; exception details omitted.")
+        return {"status": "error", "message": "Failed to store memory. Please try again later."}
 
 write_to_memory_tool_definition = {
     "type": "function",

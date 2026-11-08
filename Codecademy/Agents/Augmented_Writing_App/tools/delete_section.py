@@ -1,4 +1,7 @@
 import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 def delete_section(section_number):
     """Deletes a training manual section file from the content folder."""
@@ -18,8 +21,9 @@ def delete_section(section_number):
             "filename": f"section_{section_number}.txt"
         }
         
-    except Exception as e:
-        return {"status": "error", "message": f"Failed to delete section: {str(e)}"}
+    except Exception:
+        logger.error("Section deletion failed; exception details omitted.")
+        return {"status": "error", "message": "Failed to delete section. Please try again later."}
 
 delete_section_tool_definition = {
     "type": "function",

@@ -11,13 +11,12 @@ All licenses and source materials are respected and referenced when appropriate.
 
 ### Microsoft Learn — Azure RAG Deployment Archive
 
-[Project summary, architecture, deployment inventory, and recorded changes](./my-intelligent-app/README.md)
+[Project summary, sample architecture, service overview, and recorded changes](./my-intelligent-app/README.md)
 from my exercise deploying the Microsoft Azure Search + OpenAI sample to Azure
 Container Apps. This is a curated historical portfolio archive, not a runnable
 copy of the upstream application.
 
-As of October 15, 2026, I report that the
-[deployed application endpoint](redacted-deployment.invalid/)
+As of October 15, 2026, I report that the deployed application interface
 remains available, but the model service has been retired to reduce costs.
 UI availability does not establish that AI answers still work. The archive
 distinguishes my recorded changes and reported deployment from upstream sample
@@ -72,6 +71,38 @@ The architecture diagram in [custom_torchinfo.py](./Codecademy/custom_torchinfo.
 uses Arial to avoid torchview's missing Linux Libertine font warning on Windows.
 
 ## Git and Local Dependencies
+
+### Public repository and application output
+
+Keep credentials in ignored local environment files or the deployment secret
+store. Do not force-add these files or put secret values in source, notebook
+outputs, patches, or documentation. Placeholder variable names are not secrets,
+but environment templates are excluded by this repository's ignore rules.
+
+The agent chat apps display user messages and final assistant replies only;
+raw tool arguments, results, and provider responses are not diagnostic UI
+output. The RAG search app displays retrieved document text, not raw retrieval
+metadata. Use only data appropriate for the audience: these changes do not
+provide authentication, per-user data isolation, or prevent a model from
+including retrieved content in its final answer.
+
+Failures at these app boundaries and in their file-backed tools use generic
+user-facing messages and operation-only server logs. Exception text, tracebacks,
+request/response payloads, and credentials are deliberately omitted from those
+logs. Configure dependency logging and hosting error pages separately before
+deployment; never enable verbose provider logging on a public service.
+
+Deployment hostnames and resource names are omitted from current documentation.
+Earlier public commits can still contain them. Changing files or adding ignore
+rules does not erase Git history, forks, clones, or caches. If a real credential
+was published, revoke or rotate it first; history cleanup is not a substitute.
+Publishing code changes also does not update an already running application.
+
+Run the focused output-safety regression tests from the repository root:
+
+```powershell
+python -m unittest discover -s tests -p test_information_exposure.py
+```
 
 Local Postman AI instruction templates matching
 `.github/instructions/postman-*.instructions.md` are ignored and stay on your

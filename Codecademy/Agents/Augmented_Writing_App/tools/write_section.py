@@ -1,4 +1,7 @@
 import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 def write_section(section_number, content):
     """Writes content to a training manual section file in the content folder."""
@@ -19,8 +22,9 @@ def write_section(section_number, content):
             "length": len(content)
         }
         
-    except Exception as e:
-        return {"status": "error", "message": f"Failed to write section: {str(e)}"}
+    except Exception:
+        logger.error("Section write failed; exception details omitted.")
+        return {"status": "error", "message": "Failed to write section. Please try again later."}
 
 write_section_tool_definition = {
     "type": "function",

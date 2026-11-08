@@ -1,5 +1,8 @@
 import json
 import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 def lookup_contact(contact_name):
     """Looks up team member or contact information from the team directory."""
@@ -36,8 +39,9 @@ def lookup_contact(contact_name):
                 "available_contacts": available
             }
         
-    except Exception as e:
-        return {"status": "error", "message": f"Failed to lookup contact: {str(e)}"}
+    except Exception:
+        logger.error("Contact lookup failed; exception details omitted.")
+        return {"status": "error", "message": "Failed to lookup contact. Please try again later."}
 
 lookup_contact_tool_definition = {
     "type": "function",

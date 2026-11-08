@@ -1,5 +1,8 @@
 import json
 import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 def read_from_memory():
     """Returns all stored memories as a concatenated string."""
@@ -27,8 +30,9 @@ def read_from_memory():
         all_memories = "\n".join(memory_strings)
         return {"status": "success", "memories": all_memories}
         
-    except Exception as e:
-        return {"status": "error", "message": f"Failed to retrieve memories: {str(e)}"}
+    except Exception:
+        logger.error("Memory read failed; exception details omitted.")
+        return {"status": "error", "message": "Failed to retrieve memories. Please try again later."}
 
 read_from_memory_tool_definition = {
     "type": "function",
