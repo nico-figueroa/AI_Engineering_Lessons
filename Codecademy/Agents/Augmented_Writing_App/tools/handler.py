@@ -74,7 +74,8 @@ def get_completion_with_tools(client, messages):
     """
     # Step 1: Initial request with tools
     response = client.chat.completions.create(
-        model="gpt-4.1",
+        model="gpt-6-luna",
+        reasoning_effort="none",
         messages=messages,
         tools=TOOLS # Task 14
     )
@@ -124,7 +125,8 @@ def get_completion_with_tools(client, messages):
     
     # Step 5: Get final response
     final_response = client.chat.completions.create(
-        model="gpt-4.1",
+        model="gpt-6-luna",
+        reasoning_effort="none",
         messages=updated_messages
     )
     
